@@ -1,0 +1,2 @@
+#!/bin/bash
+JAVA_HOME="$(/usr/libexec/java_home)" exec "/usr/local/Cellar/datomic/0.9.5302/libexec/bin/groovysh" "$@"
