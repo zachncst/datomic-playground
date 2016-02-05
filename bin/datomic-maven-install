@@ -1,2 +1,7 @@
 #!/bin/bash
-JAVA_HOME="$(/usr/libexec/java_home)" exec "$DATOMIC_HOME/bin/maven-install" "$@"
+if [ "$(uname)" == "Darwin" ]; then
+  JAVA_HOME=$(dirname $(readlink $(which javac)))/java_home
+elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
+  JAVA_HOME=$(dirname $(dirname $(readlink -f $(which javac))))
+fi
+exec "$DATOMIC_HOME/bin/maven-install" "$@"
