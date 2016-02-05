@@ -11,17 +11,6 @@ This is my datomic playground, it's a means of easily getting datomic up and run
 ```
 brew install lein
 ```
- - Add ~/.lein/profiles.clj, your file should have the following:
-```
-{:user {:plugins [[cider/cider-nrepl "0.10.0-SNAPSHOT"]
-                  [refactor-nrepl "1.2.0-SNAPSHOT"]
-                  [lein-datomic "0.2.0"]]
-        :dependencies [[alembic "0.3.2"]
-                       [org.clojure/tools.nrepl "0.2.10"]]
-        :datomic {:install-location "/Users/zachncst/Datomic/datomic-pro-0.9.5327"}
-        :repositories {"my.datomic.com" {:url "https://my.datomic.com/repo"
-                                         :creds :gpg}}}}
-```
 
 ### Install Datomic Pro
 1. Go to [my.datomic](https://my.datomic.com/account), create a free account.
@@ -45,12 +34,12 @@ brew install lein
 ```
 {:user {:plugins [[cider/cider-nrepl "0.10.0-SNAPSHOT"]
                   [refactor-nrepl "1.2.0-SNAPSHOT"]
-          [lein-datomic "0.2.0"]]
+                  [lein-datomic "0.2.0"]]
         :dependencies [[alembic "0.3.2"]
                        [org.clojure/tools.nrepl "0.2.10"]]
-        :datomic {:install-location "$install-location"}}}
-    :repositories {"my.datomic.com" {:url "https://my.datomic.com/repo"
-                                 :creds :gpg}}
+        :datomic {:install-location "/Users/zachncst/Datomic/datomic-pro-0.9.5327"}
+        :repositories {"my.datomic.com" {:url "https://my.datomic.com/repo"
+                                         :creds :gpg}}}}
 ```
 7. Set DATOMIC_HOME to the install directory.
 
